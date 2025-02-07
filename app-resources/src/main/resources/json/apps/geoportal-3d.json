@@ -124,5 +124,11 @@
         { "id" : "dimension-change" },
         { "id" : "time-control-3d" },
         { "id" : "camera-controls-3d" }
-    ]
+    ],
+    "locale": {
+        "fi": {
+            "name": "3D Maailma",
+            "subtitle": "3D Maailma"
+        }
+    }
 }
