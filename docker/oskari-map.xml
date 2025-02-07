@@ -19,7 +19,7 @@ detected.
     <!--  + war OR resourceBase                                          -->
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     <Set name="contextPath">
-        <Env name="OSKARI_CONTEXT_PATH" default="/oskari" />
+        <Env name="OSKARI_CONTEXT_PATH" default="/Oskari" />
     </Set>
     <Set name="war"><SystemProperty name="jetty.base" default="."/>/webapps/oskari-map.war</Set>
 
