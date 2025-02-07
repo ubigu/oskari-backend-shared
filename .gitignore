@@ -16,3 +16,5 @@ target/
 */nbactions.xml
 */nb-configuration.xml
 .metadata
+
+docker/maven-settings
