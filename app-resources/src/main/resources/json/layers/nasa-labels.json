@@ -10,6 +10,9 @@
     "locale": {
         "en": {
             "name": "Labels"
+        },
+        "fi": {
+            "name": "Labels"
         }
     },
     "role_permissions": {

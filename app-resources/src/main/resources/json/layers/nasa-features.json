@@ -10,6 +10,9 @@
     "locale": {
         "en": {
             "name": "Features"
+        },
+        "fi": {
+            "name": "Features"
         }
     },
     "role_permissions": {

@@ -8,6 +8,9 @@
     "locale": {
         "en": {
             "name": "NLS FI background map"
+        },
+        "fi": {
+            "name": "NLS FI taustakartta"
         }
     },
     "role_permissions": {
