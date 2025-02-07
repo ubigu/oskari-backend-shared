@@ -11,14 +11,14 @@ public class ClientResourceConfiguration  implements WebMvcConfigurer {
 
     public ClientResourceConfiguration(){
         System.out.println("Loading oskari-override.properties");
-        PropertyUtil.loadProperties("/oskari-override.properties");
+        PropertyUtil.loadProperties("/oskari-docker.properties");
     }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        System.out.println("Registering /dist as static resource location");
-        registry.addResourceHandler("/dist/**")
-                .addResourceLocations("/dist/")
+        System.out.println("Registering /Oskari as static resource location");
+        registry.addResourceHandler("/Oskari/**")
+                .addResourceLocations("/Oskari/")
                 .setCachePeriod(60*60*8) // Cache static files for 8 hours
         ;
     }

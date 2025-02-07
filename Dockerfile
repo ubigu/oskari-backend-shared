@@ -19,8 +19,8 @@ COPY webapp-map webapp-map
 
 ARG FRONTEND_VERSION=2.14.2-ubigu3
 # add the frontend to oskari-override, which is loaded in webapp-map/src/main/java/org.oskari/ClientResourceConfiguration
-RUN echo "oskari.client.version=dist/${FRONTEND_VERSION}" > webapp-map/src/main/resources/oskari-override.properties
-RUN curl -s -L "https://github.com/ubigu/oskari-front-shared/releases/download/${FRONTEND_VERSION}/oskari-frontend-${FRONTEND_VERSION}.tar.gz" | tar xz -C ./webapp-map/src/main/webapp/
+RUN echo "oskari.client.version=dist/${FRONTEND_VERSION}" > webapp-map/src/main/resources/oskari-docker.properties
+RUN curl -s -L "https://github.com/ubigu/oskari-front-shared/releases/download/${FRONTEND_VERSION}/oskari-frontend-${FRONTEND_VERSION}.tar.gz" | tar xz -C ./webapp-map/src/main/webapp/Oskari/
 
 RUN mvn package
 
@@ -36,4 +36,4 @@ COPY docker/oskari-ext.example.properties resources/
 COPY docker/log4j2.xml resources/
 
 # context path in oskari-map.xml
-ENV OSKARI_CONTEXT_PATH="/oskari"
+ENV OSKARI_CONTEXT_PATH="/"
