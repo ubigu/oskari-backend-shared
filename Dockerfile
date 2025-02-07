@@ -17,6 +17,9 @@ COPY app-resources app-resources
 COPY app-specific-code app-specific-code
 COPY webapp-map webapp-map
 
+ARG FRONTEND_VERSION=2.14.2-ubigu3
+RUN curl -s -L "https://github.com/ubigu/oskari-front-shared/releases/download/${FRONTEND_VERSION}/oskari-frontend-${FRONTEND_VERSION}.tar.gz" | tar xz -C ./webapp-map/src/main/webapp/
+
 RUN mvn package
 
 FROM docker.io/library/jetty:9.4-jre17-alpine
