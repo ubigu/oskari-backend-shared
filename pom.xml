@@ -12,7 +12,9 @@
     <properties>
         <oskari.version>2.14.0</oskari.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
+        <spring-security.version>5.8.14</spring-security.version>
+
+        <java.version>17</java.version>
     </properties>
 
     <repositories>
@@ -27,7 +29,13 @@
             <url>https://oskari.org/repository/maven/snapshots/</url>
         </repository>
     </repositories>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>15.0</version>
+        </dependency>
+    </dependencies>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -36,6 +44,16 @@
                 <version>${oskari.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-oauth2-client</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-oauth2-jose</artifactId>
+                <version>${spring-security.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
