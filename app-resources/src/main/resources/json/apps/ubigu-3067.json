@@ -12,10 +12,7 @@
     }
   },
   "selectedLayers" : [
-    "/json/layers/mml-taustakartta.json",
-    "/json/layers/mml-maastokartta.json",
-    "/json/layers/mml-selkokartta.json",
-    "/json/layers/mml-ortokuva.json"
+    "/json/layers/mml-taustakartta.json"
   ],
   "bundles" : [
     {
