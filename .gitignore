@@ -18,3 +18,5 @@ target/
 .metadata
 
 docker/maven-settings
+docker/compose-example
+

@@ -92,6 +92,16 @@
                 color: #878787;
                 font: 13px/100% Arial,sans-serif;
             }
+            #oauthlogin {
+                width: 90%;
+                margin-bottom: 5px;
+                padding-left: 5px;
+                padding-right: 5px;
+                border: 1px solid #B7B7B7;
+                border-radius: 4px 4px 4px 4px;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+                font: 13px/100% Arial,sans-serif;
+            }
             #login p.error {
                 font-weight: bold;
                 color : red;
@@ -135,6 +145,8 @@ but since we want to force it to appear before the navigation we declare it here
     <div id="toolbar">
     </div>
     <div id="login">
+        <a href="${pageContext.request.contextPath}/oauth2"><button id="oauthlogin"><spring:message code="login" text="Log in" /></button></a>
+
         <c:choose>
             <c:when test="${!empty loginState}">
                 <p class="error"><spring:message code="invalid_password_or_username" text="Invalid password or username!" /></p>
@@ -163,10 +175,6 @@ but since we want to force it to appear before the navigation we declare it here
                 </c:if>
             </c:otherwise>
         </c:choose>
-    </div>
-    <div id="demolink">
-        <a href="#" style="margin: 10px; color: #3c3c3c;"
-        onClick="changeAppsetup()">EPSG:3857</a>
     </div>
     <div id="language-selector-root"></div>
 </nav>

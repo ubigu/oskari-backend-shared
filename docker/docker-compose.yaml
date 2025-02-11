@@ -1,0 +1,37 @@
+---
+networks:
+  oskari:
+
+services:
+  db:
+    image: docker.io/postgis/postgis:17-3.5
+    restart: always
+    # set shared memory limit when using docker-compose
+    shm_size: 128mb
+    networks:
+      - oskari
+    #    ports:
+    #      - "127.0.0.1:5432:5432"
+    volumes:
+      - "./compose-example/postgres/data:/var/lib/postgresql/data:rw"
+    # or set shared memory limit when deploy via swarm stack
+    #volumes:
+    #  - type: tmpfs
+    #    target: /dev/shm
+    #    tmpfs:
+    #      size: 134217728 # 128*2^20 bytes = 128Mb
+    environment:
+      POSTGRES_PASSWORD: notsecretadminpassword
+  oskari:
+    build: ..
+#    image: ghcr.io/ubigu/oskari-backend-shared:v2.14.0-ubigu9
+    restart: always
+    networks:
+      - oskari
+    volumes:
+      - "./compose-example/oskari-ext.properties:/var/lib/jetty/resources/oskari-ext.properties:ro"
+      - "./compose-example/logs/oskari/:/log:rw"
+    ports:
+      - "8080:8080"
+#    environment:
+#      OSKARI_CONTEXT_PATH: /

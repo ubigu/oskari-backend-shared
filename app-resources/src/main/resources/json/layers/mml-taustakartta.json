@@ -1,0 +1,22 @@
+{
+    "type":"wmtslayer",
+    "url":"https://avoin-karttakuva.maanmittauslaitos.fi/avoin/wmts/1.0.0/WMTSCapabilities.xml",
+    "name":"taustakartta",
+    "username": "bf241167-0601-4b4c-9a27-6e33d69db534",
+    "password": "",
+    "version": "1.3.0",
+    "organization": "Maanmittauslaitos",
+    "inspiretheme": "Background maps",
+    "locale": {
+        "en": {
+            "name": "NLS FI background map"
+        },
+        "fi": {
+            "name": "NLS FI taustakartta"
+        }
+    },
+    "role_permissions": {
+        "Guest" : ["VIEW_LAYER", "VIEW_PUBLISHED"],
+        "User" : ["VIEW_LAYER", "VIEW_PUBLISHED", "PUBLISH"]
+    }
+}
