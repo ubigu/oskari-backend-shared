@@ -32,6 +32,10 @@ COPY --from=buildimage /opt/oskari/webapp-map/target/oskari-map/WEB-INF/lib/post
 COPY docker/oskari-map.xml webapps/
 COPY docker/oskari.ini start.d/
 COPY docker/jetty-oskari.xml etc/
+# Trust X-Forwarded headers
+COPY docker/forwarded-customizer.ini start.d/
+COPY docker/forwarded-customizer.xml etc/
+
 
 COPY docker/oskari-ext.example.properties resources/
 COPY docker/log4j2.xml resources/
