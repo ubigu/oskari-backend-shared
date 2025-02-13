@@ -37,7 +37,7 @@ COPY docker/forwarded-customizer.ini start.d/
 COPY docker/forwarded-customizer.xml etc/
 
 
-COPY docker/oskari-ext.example.properties resources/
+COPY docker/oskari-ext.properties resources/
 COPY docker/log4j2.xml resources/
 
 # context path in oskari-map.xml
