@@ -10,8 +10,12 @@ public class V1_0_3__initial_db_content extends BaseJavaMigration {
     public void migrate(Context context) throws Exception {
         // add applications based on json under /src/main/resources/json/apps/
         AppSetupHelper.create(context.getConnection(), "/json/apps/ubigu-3067.json");
+
+        AppSetupHelper.create(context.getConnection(), "/json/apps/publisher-template.json");
+
         LayerHelper.setupLayer("/json/layers/mml-maastokartta.json");
         LayerHelper.setupLayer("/json/layers/mml-selkokartta.json");
         LayerHelper.setupLayer("/json/layers/mml-ortokuva.json");
+
     }
 }
