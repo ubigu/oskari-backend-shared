@@ -117,8 +117,9 @@
         </div>
         <!-- More app-specific stuff TODO: move it to JS  -->
         <div id="login">
-
-            <a href="${pageContext.request.contextPath}/oauth2"><button id="oauthlogin"><spring:message code="login" text="Log in" /></button></a>
+            <c:if test="${empty _logout_uri}" >
+                <a href="${pageContext.request.contextPath}/oauth2"><button id="oauthlogin"><spring:message code="login" text="Log in" /></button></a>
+            </c:if>
 
             <c:choose>
                 <c:when test="${!empty loginState}">
@@ -191,25 +192,6 @@ function changeAppsetup(parUuid) {
 <script type="text/javascript"
         src="${clientDomain}/Oskari${path}/index.js">
 </script>
-<script type="text/javascript">
-Oskari.on("app.start", function () {
-    var container = jQuery('#demolink');
-    container.empty();
-    container.append('<select title="Select application">')
-    var select = container.find("select");
-
-    select.on("change", function() {
-        changeAppsetup(select.val());
-    });
-    var current = Oskari.app.getUuid();
-    Oskari.app.getSystemDefaultViews().forEach(function(item) {
-        var opt = jQuery('<option value="' + item.uuid + '">' + item.name + '</option>');
-        opt.attr('selected', current === item.uuid);
-        select.append(opt);
-    });
-});
-</script>
-
 
 <!-- ############# /Javascript ################# -->
 </body>
